@@ -2,6 +2,8 @@ const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTask");
 const taskList = document.getElementById("taskList");
 
+let taskCounter = 1;
+
 function addTask() {
     const taskText = taskInput.value;
     if (taskText.trim() !== "") {
@@ -24,7 +26,9 @@ function addTask() {
         deleteButton.textContent = "Delete";
         deleteButton.classList.add("delete-button");
 
-        taskSpan.textContent = taskText;
+        // Устанавливаем номер задачи в начало текста
+        taskSpan.textContent = taskCounter + ". " + taskText;
+        taskCounter++; // Увеличиваем счетчик
 
         taskInput.value = "";
 
@@ -42,9 +46,15 @@ function addTask() {
                         taskSpan.textContent = editInput.value;
                     }
                 });
-
             } else if (e.target === deleteButton) {
                 taskList.removeChild(taskItem);
+                taskCounter--;
+
+                const taskItems = taskList.getElementsByTagName("li");
+                for (let i = 0; i < taskItems.length; i++) {
+                    const taskSpan = taskItems[i].getElementsByTagName("span")[0];
+                    taskSpan.textContent = (i + 1) + ". " + taskSpan.textContent.substring(3);
+                }
             }
         });
 
@@ -55,7 +65,6 @@ function addTask() {
         });
     }
 }
-
 
 addTaskButton.addEventListener("click", addTask);
 
