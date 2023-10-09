@@ -1,12 +1,26 @@
-/* Устанавливаем черный фон для body */
 body {
-    background-color: black;
+    background-color: #212121;
     color: white;
+    width: 800px;
+    height: 900px;
+    width: 40%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url(D:/to-do-list/fonts/static/Inter-Regular.ttf);
 }
 
 /* Стили для h1 */
 h1 {
-    text-align: center;
+    color: #FF4F03;
+    font-family: "myfont", "Inter";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 45px;
 }
 
 /* Стили для input и кнопки "Add" */
