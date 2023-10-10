@@ -7,80 +7,62 @@ body {
     height: 100%;
 }
 
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
 @font-face {
-    font-family: "myfont";
-    src: url(D:/to-do-list/fonts/static/Inter-Regular.ttf);
+    font-family: "Inter";
+    src: url(./fonts/static/Inter-Regular.ttf);
+} 
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add {
+    width: 30px;
+    height: 30px;
+    margin-left: 24px;
 }
 
 /* Стили для h1 */
 h1 {
     color: #FF4F03;
-    font-family: "myfont", "Inter";
+    font-family: "Inter";
     font-size: 45px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     margin-left: 45px;
 }
 
-/* Стили для input и кнопки "Add" */
-#taskInput {
-    width: 70%;
-    padding: 10px;
-    margin: 10px auto;
-    display: block;
-    background-color: white; /* Белый фон для input */
-    color: black; /* Черный текст для input */
+.cont {
+    display: flex;
+    align-items: center;
 }
 
-#addTask {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: white; /* Белый фон для кнопки */
-    color: black; /* Черный текст для кнопки */
-    border: none;
-    cursor: pointer;
-}
-
-/* Стили для списка задач и элементов списка */
-#taskList {
-    list-style-type: none;
+input {
     padding: 0;
-}
-
-li {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin: 5px;
-    cursor: pointer;
-    background-color: black; /* Черный фон для элемента списка */
-}
-
-/* Стили для текста задачи */
-.task-text {
-    display: inline-block;
-    margin-right: 5px;
-    margin-left: 5px;
-    color: white; /* Белый текст для текста задачи */
-}
-
-/* Стили для кнопок "Редактировать" и "Удалить" */
-.edit-button{
-    margin-left: 5px;
-    background-color: green; /* Черный фон для кнопок */
-    color: white; /* Белый текст для кнопок */
     border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    
 }
-.delete-button {
-    margin-left: 5px;
-    background-color: red; /* Черный фон для кнопок */
-    color: white; /* Белый текст для кнопок */
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+
+input:focus {
+    color: none;
+    outline: none;
+}
+
+.search {
+    width: 195px;
+    height: 35px;
+    border-radius: 30px;
+    background: #313131;
+    padding-left: 10px;
 }
